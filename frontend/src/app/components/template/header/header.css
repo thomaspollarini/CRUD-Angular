@@ -4,8 +4,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--primary-color);
-  color: var(--primary-color-text);
+  background-color: var(--app-primary);
+  color: var(--app-primary-contrast);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -15,8 +15,13 @@
   margin: 0;
 }
 
-::ng-deep .btn-menu-black .p-button-icon {
-  color: rgb(0, 0, 0);
+::ng-deep .btn-menu-white {
+  color: #fff !important;
+}
+
+::ng-deep .btn-menu-white:hover{
+  transition:none !important;
+  background-color: var(--app-primary) !important;
 }
 
 .nav-container {
@@ -28,9 +33,10 @@
 
 ::ng-deep .nav-button {
   width: 100%;
-  justify-content: flex-start;
-  padding: 0.75rem 1rem;
-  color: var(--text-color);
-  border-radius: 6px;
-  transition: background-color 0.2s;
+  justify-content: flex-start !important;
+  color: var(--text-color) !important;
+}
+
+::ng-deep .nav-button:hover {
+  background-color: var(--app-primary-hover) !important;
 }

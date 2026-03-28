@@ -1,3 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
 @import "primeicons/primeicons.css";
 @import "primeflex/primeflex.css";
+
+:root {
+    /* Cores Primárias (Aura Blue) */
+    --app-primary: #3b82f6;
+    --app-primary-hover: #3b83f652;
+    --app-primary-contrast: #ffffff;
+
+    /* Superfícies e Tons Claros */
+    --app-bg-page: #f8fafc;      /* Fundo da aplicação */
+    --app-bg-card: #ffffff;      /* Fundo de cards/modais */
+    --app-border: #e2e8f0;       /* Bordas finas */
+    
+    /* Cores de Texto */
+    --app-text-main: #0f172a;    /* Títulos e textos fortes */
+    --app-text-secondary: #64748b; /* Descrições e parágrafos */
+}
+
+
+body {
+    margin: 0;
+    background-color: var(--app-bg-page);
+    color: var(--app-text-main);
+    font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+}
