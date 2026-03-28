@@ -1,0 +1,31 @@
+.home-container {
+  min-height: 70vh;
+  padding: 2rem;
+}
+
+::ng-deep .p-card.home-card {
+  max-width: 800px;
+  text-align: center;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: rgb(242, 244, 248);
+}
+
+.home-title {
+  color: var(--app-text-main) !important;
+}
+
+.home-description {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+::ng-deep .home-button {
+  background-color: var(--app-primary) !important;
+  border-color: var(--app-primary) !important;
+}
+
+::ng-deep .home-button:hover {
+  background-color: var(--app-primary-hover-dark) !important;
+}
