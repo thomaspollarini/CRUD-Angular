@@ -1,0 +1,35 @@
+<div class="header">
+  <div class="header-side">
+    <p-button
+      icon="pi pi-bars"
+      (onClick)="menuVisivel = true"
+      [text]="true"
+      styleClass="btn-menu-black text-xl"
+    >
+    </p-button>
+  </div>
+
+  <div class="header-title">
+    {{ tituloPagina }}
+  </div>
+
+  <div class="header-side"></div>
+</div>
+
+<p-drawer [(visible)]="menuVisivel">
+  <div class="nav-container">
+    <p-button label="Clientes" icon="pi pi-users" [text]="true" styleClass="nav-button">
+
+    </p-button>
+    <p-button
+      label="Fornecedores"
+      icon="pi pi-truck"
+      [text]="true"
+      styleClass="nav-button"
+    >
+  </p-button>
+    <p-button label="Produtos" icon="pi pi-box" [text]="true" styleClass="nav-button">
+      
+    </p-button>
+  </div>
+</p-drawer>

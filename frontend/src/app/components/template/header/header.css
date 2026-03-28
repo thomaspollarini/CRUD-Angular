@@ -1,0 +1,36 @@
+.header {
+  height: 60px;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primary-color);
+  color: var(--primary-color-text);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-title {
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+::ng-deep .btn-menu-black .p-button-icon {
+  color: rgb(0, 0, 0);
+}
+
+.nav-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+::ng-deep .nav-button {
+  width: 100%;
+  justify-content: flex-start;
+  padding: 0.75rem 1rem;
+  color: var(--text-color);
+  border-radius: 6px;
+  transition: background-color 0.2s;
+}
