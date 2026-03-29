@@ -6,6 +6,7 @@
     /* Cores Primárias (Aura Blue) */
     --app-primary: #3b82f6;
     --app-primary-hover: #3b83f652;
+    --app-primary-hover-light: #d2f1fda4; /* Um tom de azul mais claro e suave */
     --app-primary-hover-dark: #2563eb; /* Um tom de azul mais fechado e profissional */
     --app-primary-contrast: #ffffff;
 

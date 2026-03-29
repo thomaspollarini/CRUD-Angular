@@ -1,0 +1,199 @@
+<p-toast></p-toast>
+<p-confirmDialog></p-confirmDialog>
+
+<div class="card">
+  <div class="mb-3">
+    <p-button
+      label="Adicionar Produto"
+      icon="pi pi-plus"
+      (onClick)="openNewProductForm()"
+      styleClass="p-button-success"
+    ></p-button>
+  </div>
+
+  <p-table
+    [value]="products()"
+    [paginator]="true"
+    [rows]="10"
+    [tableStyle]="{ 'min-width': '60rem' }"
+  >
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Nome</th>
+        <th>Descrição</th>
+        <th>Preço</th>
+        <th>Estoque</th>
+        <th>Ações</th>
+      </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-product>
+      <tr>
+        <td>{{ product.name }}</td>
+        <td>{{ product.description }}</td>
+        <td>{{ formatPrice(product.price) }}</td>
+        <td>{{ product.stock }} un.</td>
+        <td>
+          <p-button
+            icon="pi pi-pencil"
+            styleClass="p-button-warning"
+            [text]="true"
+            [rounded]="true"
+            (onClick)="openEditProduct(product)"
+          ></p-button>
+          <p-button
+            icon="pi pi-trash"
+            styleClass="p-button-danger"
+            [text]="true"
+            [rounded]="true"
+            (onClick)="deleteProduct(product.id, product.name)"
+          ></p-button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+
+  <p-dialog
+    header="Adicionar Produto"
+    [(visible)]="displayNewDialog"
+    [modal]="true"
+    [style]="{ width: '550px' }"
+    (onHide)="closeNewDialog()"
+  >
+    <form [formGroup]="productForm" class="edit-form">
+      <div class="field">
+        <label>Nome *</label>
+        <input
+          pInputText
+          formControlName="name"
+          placeholder="Nome do produto"
+          class="edit-form-input"
+        />
+        <small *ngIf="productForm.get('name')?.invalid && productForm.get('name')?.touched">
+          Nome é obrigatório
+        </small>
+      </div>
+
+      <div class="field">
+        <label>Descrição *</label>
+        <textarea
+          pTextarea
+          formControlName="description"
+          placeholder="Descrição do produto"
+          rows="3"
+          class="edit-form-input"
+        >
+        </textarea>
+        <small
+          *ngIf="productForm.get('description')?.invalid && productForm.get('description')?.touched"
+        >
+          Descrição é obrigatória
+        </small>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label>Preço *</label>
+          <p-inputnumber
+            formControlName="price"
+            mode="currency"
+            currency="BRL"
+            locale="pt-BR"
+            [min]="0.01"
+            styleClass="edit-form-input"
+          >
+          </p-inputnumber>
+        </div>
+
+        <div class="field">
+          <label>Estoque *</label>
+          <p-inputnumber formControlName="stock" [min]="0" styleClass="edit-form-input">
+          </p-inputnumber>
+        </div>
+      </div>
+    </form>
+
+    <ng-template pTemplate="footer">
+      <p-button label="Cancelar" styleClass="p-button-text" (onClick)="closeNewDialog()">
+      </p-button>
+      <p-button
+        label="Criar"
+        icon="pi pi-check"
+        (onClick)="saveNewProduct()"
+        [disabled]="productForm.invalid"
+      >
+      </p-button>
+    </ng-template>
+  </p-dialog>
+
+  <p-dialog
+    header="Editar Produto"
+    [(visible)]="displayEditDialog"
+    [modal]="true"
+    [style]="{ width: '550px' }"
+    (onHide)="closeEditDialog()"
+  >
+    <form [formGroup]="productForm" class="edit-form">
+      <!-- Nome -->
+      <div class="field">
+        <label>Nome *</label>
+        <input
+          pInputText
+          formControlName="name"
+          placeholder="Nome do produto"
+          class="edit-form-input"
+        />
+        <small *ngIf="productForm.get('name')?.invalid && productForm.get('name')?.touched">
+          Nome é obrigatório
+        </small>
+      </div>
+
+      <!-- Descrição -->
+      <div class="field">
+        <label>Descrição *</label>
+        <textarea
+          pTextarea
+          formControlName="description"
+          placeholder="Descrição do produto"
+          rows="3"
+          class="edit-form-input"
+        >
+        </textarea>
+      </div>
+
+      <!-- Preço e Estoque lado a lado -->
+      <div class="field-row">
+        <div class="field">
+          <label>Preço *</label>
+          <p-inputnumber
+            formControlName="price"
+            mode="currency"
+            currency="BRL"
+            locale="pt-BR"
+            styleClass="edit-form-input"
+          >
+          </p-inputnumber>
+        </div>
+
+        <div class="field">
+          <label>Estoque *</label>
+          <p-inputnumber formControlName="stock" [min]="0" styleClass="edit-form-input">
+          </p-inputnumber>
+        </div>
+      </div>
+    </form>
+
+    <!-- Botões do Dialog -->
+    <ng-template pTemplate="footer">
+      <p-button label="Cancelar" styleClass="p-button-text" (onClick)="closeEditDialog()">
+      </p-button>
+      <p-button
+        label="Salvar"
+        icon="pi pi-check"
+        (onClick)="saveEditProduct()"
+        [disabled]="productForm.invalid"
+      >
+      </p-button>
+    </ng-template>
+  </p-dialog>
+</div>
