@@ -1,9 +1,21 @@
 {
-  "products":[
+  "products": [
     {
-      "id":1,
       "name": "Caneta BIC Preta",
-      "price": 5.89
+      "description": "Caneta esferográfica preta da marca BIC",
+      "price": 5.89,
+      "stock": 230,
+      "id": "1"
+    },
+    {
+      "id": "2",
+      "name": "Caderno 10 Matérias",
+      "description": "Caderno universitário com 10 matérias",
+      "price": 25.5,
+      "stock": 50,
+      "createdAt": "2023-01-02T00:00:00.000Z",
+      "updatedAt": "2023-01-02T00:00:00.000Z"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
