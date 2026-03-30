@@ -2,6 +2,26 @@
 
 Projeto prático em Angular + JSON Server para gestão de produtos com operações CRUD.
 
+## Preview
+
+<p align="center">
+	<img src="docs/screenshots/print01.png" alt="Visão geral da aplicação com dashboard e tabela de produtos" />
+</p>
+
+<table>
+	<tr>
+		<td width="33%">
+			<img src="docs/screenshots/print02.png" alt="Modal de cadastro de produto" />
+		</td>
+		<td width="33%">
+			<img src="docs/screenshots/print03.png" alt="Modal de edição de produto" />
+		</td>
+		<td width="33%">
+			<img src="docs/screenshots/print04.png" alt="Modal de confirmação para excluir produto" />
+		</td>
+	</tr>
+</table>
+
 ## 🧩 Visão Geral
 
 Este repositório contém um exemplo de aplicação frontend em Angular e backend leve usando `json-server` para simular API REST.
