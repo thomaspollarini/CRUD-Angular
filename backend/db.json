@@ -27,7 +27,7 @@
       "email": "joao.silva@example.com",
       "phone": "(11) 98765-4321",
       "address": "Rua das Flores, 123, São Paulo, SP",
-      "CPF": "123.456.789-00",
+      "cpf": "123.456.789-00",
       "createdAt": "2023-01-02T00:00:00.000Z",
       "updatedAt": "2023-01-02T00:00:00.000Z"
     }
