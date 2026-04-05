@@ -5,7 +5,9 @@
       "description": "Caneta esferográfica preta da marca BIC",
       "price": 5.89,
       "stock": 230,
-      "id": "1"
+      "id": "1",
+      "createdAt": "2023-01-02T00:00:00.000Z",
+      "updatedAt": "2023-01-02T00:00:00.000Z"
     },
     {
       "id": "2",
@@ -13,6 +15,19 @@
       "description": "Caderno universitário com 10 matérias",
       "price": 25.5,
       "stock": 50,
+      "createdAt": "2023-01-02T00:00:00.000Z",
+      "updatedAt": "2023-01-02T00:00:00.000Z"
+    }
+  ],
+  
+  "clients": [
+    {
+      "id": "1",
+      "name": "João Silva",
+      "email": "joao.silva@example.com",
+      "phone": "(11) 98765-4321",
+      "address": "Rua das Flores, 123, São Paulo, SP",
+      "CPF": "123.456.789-00",
       "createdAt": "2023-01-02T00:00:00.000Z",
       "updatedAt": "2023-01-02T00:00:00.000Z"
     }
