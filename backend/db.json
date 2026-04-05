@@ -19,8 +19,8 @@
       "updatedAt": "2023-01-02T00:00:00.000Z"
     }
   ],
-  
-  "clients": [
+
+  "customers": [
     {
       "id": "1",
       "name": "João Silva",

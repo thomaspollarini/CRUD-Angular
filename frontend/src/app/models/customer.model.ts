@@ -1,18 +1,18 @@
-export interface Client {
+﻿export interface Customer {
   id: string;
   name: string;
-  email: string,
+  email: string;
   phone: string;
-  adress: string,
+  adress: string;
   cpf: string;
   createdAt: Date;
   updatedAt: Date;
 }
 
-export interface ClientFormData {
+export interface CustomerFormData {
   name: string;
-  email: string,
+  email: string;
   phone: string;
-  adress: string,
+  adress: string;
   cpf: string;
 }

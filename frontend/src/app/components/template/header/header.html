@@ -9,29 +9,29 @@
     </p-button>
   </div>
 
-  <div class="header-title">
-    CRUD Angular
-  </div>
+  <div class="header-title">CRUD Angular</div>
 
   <div class="header-side"></div>
 </div>
 
 <p-drawer [(visible)]="menuVisivel">
   <div class="nav-container">
-    <p-button label="Inicio"
+    <p-button
+      label="Inicio"
       icon="pi pi-home"
       [text]="true"
       styleClass="nav-button"
       routerLink="/"
       (click)="menuVisivel = false"
-    > </p-button>
+    >
+    </p-button>
 
     <p-button
       label="Clientes"
       icon="pi pi-users"
       [text]="true"
       styleClass="nav-button"
-      routerLink="/clients"
+      routerLink="/customers"
       (click)="menuVisivel = false"
     >
     </p-button>
