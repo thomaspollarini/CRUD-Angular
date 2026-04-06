@@ -1,1 +1,109 @@
-<p>customer-list works!</p>
+<p-toast></p-toast>
+<p-confirmDialog></p-confirmDialog>
+
+<div class="card">
+  <div class="mb-3">
+    <p-button
+      label="Adicionar Cliente"
+      icon="pi pi-plus"
+      (onClick)="openNewCustomerForm()"
+      styleClass="p-button-success"
+    ></p-button>
+  </div>
+
+  <p-table
+    [value]="customers()"
+    [paginator]="true"
+    [rows]="10"
+    [tableStyle]="{ 'min-width': '60rem' }"
+  >
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Telefone</th>
+        <th>Endereço</th>
+        <th>CPF</th>
+        <th>Ações</th>
+      </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-customer>
+      <tr>
+        <td>{{ customer.name }}</td>
+        <td>{{ customer.email }}</td>
+        <td>
+          {{ customer.phone }}
+          <span *ngIf="!customer.phone">Não informado</span>
+        </td>
+        <td>
+          {{ customer.address }}
+          <span *ngIf="!customer.address">Não informado</span>
+        </td>
+        <td>{{ customer.cpf }}</td>
+        <td>
+          <p-button
+            icon="pi pi-pencil"
+            styleClass="p-button-warning"
+            [text]="true"
+            [rounded]="true"
+            (click)="openEditCustomer(customer)"
+          ></p-button>
+
+          <p-button
+            icon="pi pi-trash"
+            styleClass="p-button-danger"
+            [text]="true"
+            [rounded]="true"
+            (click)="deleteCustomer(customer.id, customer.name)"
+          ></p-button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+
+  <p-dialog
+    header="Adicionar Cliente"
+    [(visible)]="displayNewDialog"
+    [modal]="true"
+    [style]="{ width: '550px' }"
+    (onHide)="closeNewCustomerForm()"
+  >
+    <app-costumer-form [customerForm]="customerForm"></app-costumer-form>
+
+    <ng-template pTemplate="footer">
+      <p-button label="Cancelar" styleClass="p-button-text" (onClick)="closeNewCustomerForm()">
+      </p-button>
+      <p-button
+        label="Criar"
+        icon="pi pi-check"
+        (onClick)="saveNewCustomer()"
+        [disabled]="customerForm.invalid"
+      >
+      </p-button>
+    </ng-template>
+  </p-dialog>
+
+  <p-dialog
+    header="Editar Cliente"
+    [(visible)]="displayEditDialog"
+    [modal]="true"
+    [style]="{ width: '550px' }"
+    (onHide)="closeEditDialog()"
+  >
+    <app-costumer-form [customerForm]="customerForm"></app-costumer-form>
+
+    <!-- Botões do Dialog -->
+    <ng-template pTemplate="footer">
+      <p-button label="Cancelar" styleClass="p-button-text" (onClick)="closeEditDialog()">
+      </p-button>
+      <p-button
+        label="Salvar"
+        icon="pi pi-check"
+        (onClick)="saveEditCustomer()"
+        [disabled]="customerForm.invalid"
+      >
+      </p-button>
+    </ng-template>
+  </p-dialog>
+</div>
