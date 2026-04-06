@@ -1,15 +1,12 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
-import { InputTextModule } from 'primeng/inputtext';
-import { TextareaModule } from 'primeng/textarea';
-import { InputNumberModule } from 'primeng/inputnumber';
 import { ToastModule } from 'primeng/toast';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ToolbarModule } from 'primeng/toolbar';
@@ -18,21 +15,19 @@ import { MessageService, ConfirmationService } from 'primeng/api';
 
 import { Product, ProductFormData } from '../../../models/product.model';
 import { ProductService } from '../../../services/product.service';
+import { ProductForm } from '../product-form/product-form';
 
 @Component({
   selector: 'app-product-list',
   imports: [
     CommonModule,
-    ReactiveFormsModule,
     TableModule,
     ButtonModule,
     DialogModule,
-    InputTextModule,
-    TextareaModule,
-    InputNumberModule,
     ToastModule,
     ConfirmDialogModule,
     ToolbarModule,
+    ProductForm,
   ],
   providers: [MessageService, ConfirmationService],
   templateUrl: './product-list.html',
