@@ -1,0 +1,65 @@
+<form [formGroup]="customerForm" class="edit-form">
+      <div class="field">
+        <label>Nome *</label>
+        <input
+          pInputText
+          formControlName="name"
+          placeholder="Nome do cliente"
+          class="edit-form-input"
+        />
+        <small *ngIf="customerForm.get('name')?.invalid && customerForm.get('name')?.touched">
+          Nome é obrigatório
+        </small>
+      </div>
+
+      <div class="field">
+        <label>Email *</label>
+        <input
+          pInputText
+          formControlName="email"
+          placeholder="Email do cliente"
+          class="edit-form-input"
+        />
+        <small *ngIf="customerForm.get('email')?.invalid && customerForm.get('email')?.touched">
+          Email é obrigatório
+        </small>
+      </div>
+
+      <div class="field">
+        <label>Endereço</label>
+        <input
+          pInputText
+          formControlName="address"
+          placeholder="Endereço do cliente"
+          class="edit-form-input"
+        />
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label>Telefone</label>
+          <input
+            pInputText
+            formControlName="phone"
+            placeholder="Telefone do cliente"
+            class="edit-form-input"
+          />
+          <small *ngIf="customerForm.get('phone')?.invalid && customerForm.get('phone')?.touched">
+            Coloque no formato (xx) xxxxx-xxxx
+          </small>
+        </div>
+
+        <div class="field">
+        <label>CPF *</label>
+        <input
+          pInputText
+          formControlName="cpf"
+          placeholder="CPF do cliente"
+          class="edit-form-input"
+        />
+        <small *ngIf="customerForm.get('cpf')?.invalid && customerForm.get('cpf')?.touched">
+          CPF é obrigatório e deve ser formatado xxx.xxx.xxx-xx
+        </small>
+      </div>
+      </div>
+    </form>
